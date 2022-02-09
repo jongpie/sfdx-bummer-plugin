@@ -1,0 +1,20 @@
+# Directories
+.npm/
+.sfdx/
+.vscode/
+lib/
+node_modules
+tmp/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Temporary files
+oclif.manifest.json
+npm-shrinkwrap.json
+npm-
+
+# Test files
+sfdx-project.json

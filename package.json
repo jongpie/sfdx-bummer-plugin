@@ -1,0 +1,66 @@
+{
+    "name": "@jongpie/sfdx-bummer-plugin",
+    "description": "A plugin for SFDX CLI to help update sfdx-project.json with package versions in your devhub.",
+    "version": "0.0.16",
+    "author": "Jonathan Gillespie",
+    "bugs": {
+        "url": "https://github.com/jongpie/sfdx-bummer-plugin/issues"
+    },
+    "dependencies": {
+        "@oclif/command": "^1",
+        "@oclif/config": "^1.13.0",
+        "@oclif/errors": "^1",
+        "@salesforce/command": "^4.2.2",
+        "@salesforce/core": "^2.35.0",
+        "fs-extra": "^10.0.0",
+        "tslib": "^2.3"
+    },
+    "devDependencies": {
+        "@oclif/dev-cli": "^1",
+        "@oclif/plugin-help": "^5.1",
+        "@oclif/test": "^2",
+        "@salesforce/dev-config": "3",
+        "@types/node": "^17",
+        "ts-node": "^10.5",
+        "tslint": "^6.1",
+        "typescript": "^4.5"
+    },
+    "engines": {
+        "node": ">=8.0.0"
+    },
+    "files": [
+        "/lib",
+        "/messages",
+        "/npm-shrinkwrap.json",
+        "/oclif.manifest.json"
+    ],
+    "homepage": "https://github.com/jongpie/sfdx-bummer-plugin",
+    "keywords": [
+        "sfdx-plugin"
+    ],
+    "license": "MIT",
+    "oclif": {
+        "commands": "./lib/commands",
+        "bin": "sfdx",
+        "topics": {
+            "bummer:package:versions:retrieve": {
+                "description": "Retrieves package versions from your devhub and updates sfdx-project.json"
+            }
+        },
+        "devPlugins": [
+            "@oclif/plugin-help"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jongpie/sfdx-bummer-plugin.git"
+    },
+    "scripts": {
+        "build": "tsc -p .",
+        "postpack": "rm -f oclif.manifest.json",
+        "posttest": "tslint -p test -t stylish",
+        "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+        "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
+        "version": "oclif-dev readme && git add README.md"
+    }
+}

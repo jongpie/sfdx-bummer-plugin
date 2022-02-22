@@ -1,7 +1,7 @@
 {
     "name": "@jongpie/sfdx-bummer-plugin",
     "description": "A plugin for SFDX CLI to help maintain sfdx-project.json",
-    "version": "0.0.17",
+    "version": "0.0.18",
     "author": "Jonathan Gillespie",
     "bugs": {
         "url": "https://github.com/jongpie/sfdx-bummer-plugin/issues"

@@ -69,15 +69,12 @@ export default class Sort extends SfdxCommand {
     }
 
     private saveProject(project) {
-        if (project.defaultdevhubusername) {
-            delete project.defaultdevhubusername;
-        }
-        if (project.defaultusername) {
-            delete project.defaultusername;
-        }
-        if (project.restDeploy) {
-            delete project.restDeploy;
-        }
+        const deleteConfig = ["defaultdevhubusername", "defaultusername", "restDeploy"];
+        deleteConfig.forEach((configKey : string) => {
+            if (project[configKey]) {
+                delete project[configKey]
+            }
+        })
         const outputPath = 'sfdx-project.json';
         this.ux.log(`Saving changes to ${outputPath}`);
         fs.writeFileSync(outputPath, JSON.stringify(project, null, 4));

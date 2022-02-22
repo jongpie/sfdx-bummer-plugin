@@ -18,9 +18,13 @@ A plugin for SFDX CLI to help update `sfdx-project.json` with package versions i
 
 4. Link the plugin: `sfdx plugins:link` .
 
-## Command
+## Commands
 
-`sfdx bummer:package:versions:retrieve`
+### `sfdx bummer:package:aliases:sort`
+
+Sorts `packageAliases` in `sfdx-project.json`, based on each package's name, major version, minor version, patch version, and build number
+
+### `sfdx bummer:package:versions:retrieve`
 
 Scans the `packageAliases` in `sfdx-project.json`, and retrieves package versions for any packages listed. All 3 parameters are optional
 

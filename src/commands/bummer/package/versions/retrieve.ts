@@ -114,6 +114,7 @@ export default class Retrieve extends SfdxCommand {
         }
         return cleanedPackageAliases;
     }
+
     private generatePackageVersionAlias(packageAlias, packageVersion) {
         let packageVersionAlias =
             packageAlias +

@@ -1,4 +1,5 @@
 {
+    "sortCommandDescription": "Sorts the list of package aliases in sfdx-project.json",
     "retrieveCommandDescription": "Retrieves package versions from your devhub, based on packages listed in sfdx-project.json",
     "retrieveCommandMaxVersionsFlagDescription": "Controls how many package versions are retrieved per package",
     "retrieveCommandReleasedFlagDescription": "Controls if only released package versions are included"

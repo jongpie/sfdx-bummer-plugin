@@ -71,7 +71,12 @@ export default class Sort extends SfdxCommand {
     private saveProject(project) {
         // TODO long term, this still needs to be revisited to determine why these extra properties appear in the first place
         // It seems to be caused by calling this.project.resolveProjectConfig() (above)
-        const deleteConfig = ["defaultdevhubusername", "defaultusername", "restDeploy", 'target-dev-hub'];
+        const deleteConfig = [
+            // Older sfdx properties that shouldn't be included
+            "defaultdevhubusername", "defaultusername", "restDeploy",
+            // Newer sf properties that shouldn't be included
+            "disable-telemetry", "org-metadata-rest-deploy", "target-dev-hub", "target-org"
+        ];
         deleteConfig.forEach((configKey : string) => {
             if (project[configKey]) {
                 delete project[configKey]

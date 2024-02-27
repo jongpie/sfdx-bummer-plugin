@@ -69,7 +69,9 @@ export default class Sort extends SfdxCommand {
     }
 
     private saveProject(project) {
-        const deleteConfig = ["defaultdevhubusername", "defaultusername", "restDeploy"];
+        // TODO long term, this still needs to be revisited to determine why these extra properties appear in the first place
+        // It seems to be caused by calling this.project.resolveProjectConfig() (above)
+        const deleteConfig = ["defaultdevhubusername", "defaultusername", "restDeploy", 'target-dev-hub'];
         deleteConfig.forEach((configKey : string) => {
             if (project[configKey]) {
                 delete project[configKey]
